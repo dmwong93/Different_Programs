@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class File_Array
 {
 	//Private Field to hold the array.
@@ -5,7 +7,6 @@ public class File_Array
 	private double[] values;
 	private double highestValue;
 	private double lowestValue;
-
 	/**
 	   Constructor accepts the values passed from the 
 	   object as an argument.
@@ -13,14 +14,11 @@ public class File_Array
 	
 	public File_Array(double[] values)
 	{
-		this.values = new double[values.length];
-
-		for (int index = 0; index < values.length; index++)
-		{
-			values[index] = values[index];
-		}
-		
+		this.values = values;
+		highestValue = 0.0;
+		lowestValue = 0.0;
 	}
+
   
 	/**
 	   This method will add all the values and return them
@@ -32,24 +30,10 @@ public class File_Array
 		//Adding the values together using a for loop.
 
 		for(int i = 0; i < values.length; i++)
-		{
 			total += values[i];
-		}
 		
 		//returning the sum
 		return total;
-	}
-
-	/**
-	   This is a toString method to display the values from the File.
-	*/
-	
-	public String toString()
-	{
-		//Display all the values
-		String str = "These are all the values entered: " + values;
-
-		return str;
 	}
 
 	/** This method adds all the values and averages them.
@@ -57,7 +41,7 @@ public class File_Array
 
 	public double average()
 	{
-		return total / values.length;
+		return sum() / values.length;
 	}
 
 	/** This method find the highest value inside the array
@@ -70,7 +54,7 @@ public class File_Array
 		highestValue = values[i];
 	
 		for (int j = 1; j < values.length; j++)
-			if (highestValue > values[j])
+			if (highestValue < values[j])
 			{
 				highestValue = values[j];
 			}
@@ -86,7 +70,7 @@ public class File_Array
 		lowestValue = values[0];
 
 		for (int j = 1; j < values.length; j++)
-			if (lowestValue < values[j])
+			if (lowestValue > values[j])
 			{
 				lowestValue = values[j];
 			}
