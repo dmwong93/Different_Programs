@@ -3,8 +3,6 @@ public class File_Array
 	//Private Field to hold the array.
 
 	private double[] values;
-	private double total;
-	private double average;
 	private double highestValue;
 	private double lowestValue;
 
@@ -22,10 +20,6 @@ public class File_Array
 			values[index] = values[index];
 		}
 		
-		double total = 0.0;
-		double average = 0.0;
-		double highestValue = 0.0;
-		double lowestValue = 0.0;
 	}
   
 	/**
@@ -63,10 +57,7 @@ public class File_Array
 
 	public double average()
 	{
-		double averageSum;
-
-		averageSum = total / values.length;
-		return averageSum;
+		return total / values.length;
 	}
 
 	/** This method find the highest value inside the array
