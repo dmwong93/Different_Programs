@@ -34,7 +34,7 @@ public class File_Array
 
 	public double sum()
 	{
-		
+		double total = 0.0;
 		//Adding the values together using a for loop.
 
 		for(int i = 0; i < values.length; i++)
